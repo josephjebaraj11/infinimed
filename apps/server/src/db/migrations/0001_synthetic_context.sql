@@ -1,0 +1,1 @@
+ALTER TABLE "synthetic_tokens" ADD COLUMN "context" jsonb;

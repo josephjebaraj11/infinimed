@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.data/
+*.log
+.env
+.env.local
+coverage/
+*.tsbuildinfo
+.DS_Store
+keys/*.pem
