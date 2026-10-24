@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { api } from "../api";
-import { ErrorBox, useAction } from "../components";
+import { ErrorBox, Logo, useAction } from "../components";
 import { useSession } from "../session";
 
 export function Login({ onDone }: { onDone: () => Promise<void> }) {
@@ -23,7 +23,7 @@ export function Login({ onDone }: { onDone: () => Promise<void> }) {
     <div className="auth-wrap">
       <form className="card auth-card" onSubmit={submit}>
         <div className="brand" style={{ padding: 0, marginBottom: 12 }}>
-          <span className="brand-mark" aria-hidden /> InfiniMed
+          <Logo /> InfiniMed
         </div>
         <h1>Sign in</h1>
         {invite && <p className="muted">Sign in to accept your workspace invitation.</p>}

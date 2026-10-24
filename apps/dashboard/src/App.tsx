@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { NavLink, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { api, ApiError, type Me } from "./api";
-import { Loading } from "./components";
+import { Loading, Logo } from "./components";
 import { Session, type SessionCtx } from "./session";
 import { AcceptInvite, Login, Signup } from "./pages/Auth";
 import { Overview } from "./pages/Overview";
@@ -73,7 +73,7 @@ export function App() {
       <div className="shell">
         <aside className="sidebar">
           <div className="brand">
-            <span className="brand-mark" aria-hidden /> InfiniMed
+            <Logo /> InfiniMed
           </div>
           <div className="ws-switch">
             <select

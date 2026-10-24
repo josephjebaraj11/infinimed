@@ -1,5 +1,31 @@
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useId, useState, type ReactNode } from "react";
 import { ApiError } from "./api";
+
+/** The InfiniMed mark: a medical cross wired into a neural network. Mirrors public/favicon.svg. */
+export function Logo({ size = 22 }: { size?: number }) {
+  const gradient = useId();
+  return (
+    <svg className="brand-mark" width={size} height={size} viewBox="0 0 32 32" aria-hidden>
+      <defs>
+        <linearGradient id={gradient} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#2f5bea" />
+          <stop offset="1" stopColor="#7c3aed" />
+        </linearGradient>
+      </defs>
+      <rect width="32" height="32" rx="8" fill={`url(#${gradient})`} />
+      <path d="M13 13 9.5 9.5M19 13l3.5-3.5M13 19l-3.5 3.5M19 19l3.5 3.5" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" opacity="0.85" />
+      <g fill="#fff">
+        <circle cx="8.5" cy="8.5" r="2" />
+        <circle cx="23.5" cy="8.5" r="2" />
+        <circle cx="8.5" cy="23.5" r="2" />
+        <circle cx="23.5" cy="23.5" r="2" />
+        <rect x="13" y="6" width="6" height="20" rx="2" />
+        <rect x="6" y="13" width="20" height="6" rx="2" />
+      </g>
+      <circle cx="16" cy="16" r="2.2" fill="#4f46e5" />
+    </svg>
+  );
+}
 
 /** Loads data with loading/error states and a reload function. */
 export function useLoad<T>(load: () => Promise<T>, deps: unknown[] = []) {
